@@ -1,6 +1,6 @@
 ¡Ha llegado el momento de sumar!
 <?php echo $this->Form->create(false, array(
-          'url' => array('controller' => 'hello', 'action' => 'calculadora')
+          'url' => array('controller' => 'calculator', 'action' => 'index')
       ));
 ?>
 <?php echo $this->Form->input('#1'); ?>
