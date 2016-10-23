@@ -7,11 +7,10 @@
  */
 class HelloController extends AppController {
 
-    var $msg = "Hello World";
+    private $msg = "Hello World!";
 
     function index()
     {
-        echo $this->msg;
-        $this->set($msg);
+        $this->set('msg',$this->msg);
     }
 }
