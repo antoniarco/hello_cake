@@ -13,10 +13,10 @@ class CalculatorController extends AppController {
 
     function index()
     {
-        $request = $this->request->data;
 
-        if (!empty($request))
+        if (!empty($this->request->data))
         {
+            $request = $this->request->data;
             $result = array();
             $param1 = $request['#1'];
             $param2 = $request['#2'];
@@ -35,6 +35,5 @@ class CalculatorController extends AppController {
 
             $this->set('response',$response);
         }
-
     }
 }
