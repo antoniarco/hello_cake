@@ -5,6 +5,8 @@
  * Date: 23/10/16
  * Time: 20:16
  */
+App::uses('FormHelper','Form');
+
 class HelloController extends AppController {
 
     private $msg = "Hello World!";
@@ -12,5 +14,16 @@ class HelloController extends AppController {
     function index()
     {
         $this->set('msg',$this->msg);
+    }
+
+    function calculadora()
+    {
+        if (empty($this->request->data))
+        {
+
+        } else {
+            echo "calculado";
+        }
+
     }
 }
