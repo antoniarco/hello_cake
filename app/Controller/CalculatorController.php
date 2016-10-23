@@ -9,17 +9,13 @@ App::uses('FormHelper','Form');
 
 class CalculatorController extends AppController {
 
-    private $msg = "Hello World!";
-
     function index()
     {
-
+        // we need to calculate
         if (!empty($this->request->data))
         {
-            $request = $this->request->data;
-            $result = array();
-            $param1 = $request['#1'];
-            $param2 = $request['#2'];
+            $param1 = $this->request->data['#1'];
+            $param2 = $this->request->data['#2'];
 
             // Cheking that booth params are numbers and not empty
             if ( is_numeric($param1) && is_numeric($param2) )
@@ -29,10 +25,11 @@ class CalculatorController extends AppController {
                     'msg' => 'El resultado de la operación es: '.$result);
 
             } else {
+                // we have an error
                 $response = array('code'=>'ko',
                     'msg' => '**Comprueba que los campos sean númericos y esten completados');
             }
-
+            // setting response
             $this->set('response',$response);
         }
     }
