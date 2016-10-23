@@ -21,13 +21,15 @@ class CalculatorController extends AppController {
             if ( is_numeric($param1) && is_numeric($param2) )
             {
                 $result = $this->Calculator->sum($param1,$param2);
-                $response = array('code'=>'ok',
-                    'msg' => 'El resultado de la operación es: '.$result);
+                $response = array(  'code'=>'OK',
+                                    'msg' => 'El resultado de la operación es: '.$result
+                );
 
             } else {
                 // we have an error
-                $response = array('code'=>'ko',
-                    'msg' => '**Comprueba que los campos sean númericos y esten completados');
+                $response = array(  'code'=>'KO',
+                                    'msg' => '**Comprueba que los campos sean númericos y esten completados'
+                );
             }
             // setting response
             $this->set('response',$response);
